@@ -1,5 +1,8 @@
 package PLA5_Actividad;
 
+/***************************************************************************/
+/* IMPORTANTE: archivos y working-space han de estar en codificación UTF-8 */
+/***************************************************************************/
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import static PLA5_Actividad.Uti.*;
 import java.util.function.Function;
@@ -120,6 +123,9 @@ public class Main {
     impln("Texto codificado(BI):   \"", CodPC.andThen(CodBI).andThen(DescodPC).apply(textoPrueba), "\"");    
 
     /*Descodificación BloquesInvertir*/
-    impln("Texto descodificado:    \"", CodPC.andThen(CodBI).andThen(DescodPC).andThen(DescodBI).apply(textoPrueba), "\""); 
+    impln("Texto descodificado:    \"", CodPC.andThen(CodBI).andThen(DescodPC).andThen(DescodBI).apply(textoPrueba), "\"");
+    
+    contextoPC.close();
+    contextoBI.close();
   }
 }
